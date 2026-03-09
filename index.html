@@ -648,13 +648,100 @@ a:hover { text-decoration: underline; }
       <figcaption>Potassium-rich foods</figcaption>
     </figure>
 
-    <!-- Infographic -->
+    <!-- Infographic Smart Block -->
     <div class="gutenberg-block" id="potassium-infographic">
       <span class="block-label">📊 Infographic</span>
-      <figure class="article-img" style="margin:0;box-shadow:0 4px 20px rgba(0,0,0,0.12);border-radius:var(--radius-lg);overflow:hidden">
-        <img src="images/potassium-infographic.png" alt="The Complete Guide to Potassium — Dr. Berg Infographic" loading="lazy" width="800">
-        <figcaption>The Complete Guide to Potassium — tap to enlarge</figcaption>
-      </figure>
+
+      <!-- Schema.org ImageObject -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ImageObject",
+        "name": "The Complete Guide to Potassium",
+        "description": "An infographic covering the benefits of potassium, daily requirements, top food sources, deficiency symptoms, and the potassium-sodium ratio for optimal health.",
+        "contentUrl": "https://www.drberg.com/blog/images/potassium-infographic.png",
+        "url": "https://www.drberg.com/blog/benefits-of-potassium",
+        "author": { "@type": "Person", "name": "Dr. Eric Berg" },
+        "publisher": { "@type": "Organization", "name": "Dr. Berg Nutritionals", "url": "https://www.drberg.com" },
+        "datePublished": "2025-04-01",
+        "copyrightHolder": { "@type": "Organization", "name": "Dr. Berg Nutritionals" },
+        "copyrightYear": "2025",
+        "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+        "creditText": "Dr. Berg Nutritionals",
+        "keywords": "potassium, minerals, electrolytes, nutrition, keto"
+      }
+      </script>
+
+      <style>
+      /* Infographic Smart Block */
+      .drberg-infographic-block { max-width:100%; position:relative; }
+      .drberg-ig-image-wrap { border-radius:12px 12px 0 0; overflow:hidden; background:#F5F5F0; box-shadow:0 4px 20px rgba(0,0,0,0.10); }
+      .drberg-ig-image-wrap img { width:100%; height:auto; display:block; }
+      .drberg-ig-actions { display:flex; align-items:center; justify-content:space-between; gap:0.75rem; padding:0.85rem 1.25rem; background:var(--color-primary); border-radius:0 0 12px 12px; flex-wrap:wrap; }
+      .drberg-ig-download { display:inline-flex; align-items:center; gap:0.45rem; background:var(--color-brand-green); color:#fff; font-size:0.875rem; font-weight:700; font-family:inherit; padding:0.55rem 1.1rem; border:none; border-radius:8px; cursor:pointer; text-decoration:none; transition:background 0.2s; line-height:1; }
+      .drberg-ig-download:hover { background:var(--color-brand-green-hover); text-decoration:none; color:#fff; }
+      .drberg-ig-download svg { width:16px; height:16px; flex-shrink:0; }
+      .drberg-ig-share-row { display:flex; align-items:center; gap:0.4rem; }
+      .drberg-ig-share-btn { display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border:none; border-radius:8px; cursor:pointer; transition:background 0.2s, transform 0.15s; padding:0; background:rgba(255,255,255,0.12); }
+      .drberg-ig-share-btn:hover { background:rgba(255,255,255,0.22); transform:scale(1.08); }
+      .drberg-ig-share-btn svg { width:18px; height:18px; fill:#fff; }
+      .drberg-ig-embed-toggle { display:flex; align-items:center; gap:0.35rem; background:none; border:1px solid rgba(255,255,255,0.2); border-radius:8px; color:rgba(255,255,255,0.75); font-size:0.75rem; font-family:inherit; font-weight:500; padding:0.45rem 0.75rem; cursor:pointer; transition:all 0.2s; line-height:1; }
+      .drberg-ig-embed-toggle:hover { border-color:rgba(255,255,255,0.5); color:#fff; }
+      .drberg-ig-embed-toggle svg { width:14px; height:14px; fill:currentColor; flex-shrink:0; }
+      .drberg-ig-embed-panel { max-height:0; overflow:hidden; transition:max-height 0.35s ease, padding 0.35s ease; background:#3d4640; padding:0 1.25rem; }
+      .drberg-ig-embed-panel.open { max-height:250px; padding:1rem 1.25rem; }
+      .drberg-ig-actions.embed-open { border-radius:0; }
+      .drberg-ig-embed-label { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:rgba(255,255,255,0.55); margin-bottom:0.4rem; }
+      .drberg-ig-embed-code { width:100%; height:70px; background:#2b302d; border:1px solid rgba(255,255,255,0.1); border-radius:6px; color:var(--color-primary-alt); font-family:'SF Mono',Monaco,Consolas,monospace; font-size:0.7rem; padding:0.5rem; resize:none; outline:none; }
+      .drberg-ig-embed-code:focus { border-color:var(--color-primary-alt); }
+      .drberg-ig-embed-copy { display:inline-flex; align-items:center; gap:0.3rem; margin-top:0.5rem; background:var(--color-primary-alt); color:var(--color-primary-alt-accent); font-size:0.75rem; font-weight:700; font-family:inherit; padding:0.4rem 0.75rem; border:none; border-radius:6px; cursor:pointer; transition:opacity 0.2s; }
+      .drberg-ig-embed-copy:hover { opacity:0.85; }
+      .drberg-ig-toast { position:fixed; bottom:2rem; left:50%; transform:translateX(-50%) translateY(20px); background:var(--color-primary); color:var(--color-primary-alt); font-family:inherit; font-size:0.85rem; font-weight:600; padding:0.65rem 1.25rem; border-radius:8px; box-shadow:0 4px 16px rgba(0,0,0,0.25); opacity:0; pointer-events:none; transition:opacity 0.3s, transform 0.3s; z-index:10000; }
+      .drberg-ig-toast.visible { opacity:1; transform:translateX(-50%) translateY(0); }
+      @media (max-width:540px) {
+        .drberg-ig-actions { padding:0.65rem 0.85rem; gap:0.5rem; }
+        .drberg-ig-download { font-size:0.8rem; padding:0.5rem 0.85rem; }
+        .drberg-ig-share-btn { width:32px; height:32px; }
+        .drberg-ig-share-btn svg { width:16px; height:16px; }
+      }
+      </style>
+
+      <div class="drberg-infographic-block">
+        <div class="drberg-ig-image-wrap">
+          <img src="images/potassium-infographic.png" alt="The Complete Guide to Potassium — Dr. Berg Infographic" loading="lazy" width="800">
+        </div>
+        <div class="drberg-ig-actions" id="drberg-ig-actions-bar">
+          <a class="drberg-ig-download" href="images/potassium-infographic.png" download="the-complete-guide-to-potassium.png">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Infographic
+          </a>
+          <div class="drberg-ig-share-row">
+            <button class="drberg-ig-share-btn" id="drberg-ig-pin" title="Pin on Pinterest" aria-label="Share on Pinterest">
+              <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.993 3.995-.282 1.193.599 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.893 2.745a.357.357 0 01.084.345c-.091.378-.293 1.193-.333 1.36-.053.22-.174.266-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+            </button>
+            <button class="drberg-ig-share-btn" id="drberg-ig-x" title="Share on X" aria-label="Share on X">
+              <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </button>
+            <button class="drberg-ig-share-btn" id="drberg-ig-fb" title="Share on Facebook" aria-label="Share on Facebook">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </button>
+            <button class="drberg-ig-share-btn" id="drberg-ig-copy" title="Copy Link" aria-label="Copy link to clipboard">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+          <button class="drberg-ig-embed-toggle" id="drberg-ig-embed-btn">
+            <svg viewBox="0 0 24 24"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+            Embed
+          </button>
+        </div>
+        <div class="drberg-ig-embed-panel" id="drberg-ig-embed-panel">
+          <div class="drberg-ig-embed-label">Embed this infographic</div>
+          <textarea class="drberg-ig-embed-code" id="drberg-ig-embed-code" readonly><a href="https://www.drberg.com/blog/benefits-of-potassium" target="_blank" rel="noopener"><img src="https://www.drberg.com/blog/images/potassium-infographic.png" alt="The Complete Guide to Potassium — Dr. Berg Infographic" style="max-width:100%;height:auto" /></a>
+<p style="font-size:12px;color:#666">Source: <a href="https://www.drberg.com">Dr. Berg Nutritionals</a></p></textarea>
+          <button class="drberg-ig-embed-copy" id="drberg-ig-embed-copy">Copy Embed Code</button>
+        </div>
+      </div>
+      <div class="drberg-ig-toast" id="drberg-ig-toast"></div>
     </div>
 
     <!-- ========================================
@@ -1376,6 +1463,50 @@ a:hover { text-decoration: underline; }
   });
 
   updateQuizProgress();
+
+
+  // ============================================================
+  // INFOGRAPHIC SMART BLOCK — Share, embed, copy handlers
+  // ============================================================
+  var igPageUrl = 'https://www.drberg.com/blog/benefits-of-potassium';
+  var igImgUrl = 'https://www.drberg.com/blog/images/potassium-infographic.png';
+  var igTitle = 'The Complete Guide to Potassium';
+  var igDesc = 'An infographic covering the benefits of potassium, daily requirements, top food sources, deficiency symptoms, and the potassium-sodium ratio for optimal health.';
+  var igPinDesc = igTitle + ' — ' + igDesc.substring(0, 200);
+
+  document.getElementById('drberg-ig-pin').addEventListener('click', function() {
+    window.open('https://pinterest.com/pin/create/button/?url=' + encodeURIComponent(igPageUrl) + '&media=' + encodeURIComponent(igImgUrl) + '&description=' + encodeURIComponent(igPinDesc), '_blank', 'width=750,height=600');
+  });
+  document.getElementById('drberg-ig-x').addEventListener('click', function() {
+    window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(igTitle + ' [Infographic] via @draboricberg') + '&url=' + encodeURIComponent(igPageUrl), '_blank', 'width=600,height=400');
+  });
+  document.getElementById('drberg-ig-fb').addEventListener('click', function() {
+    window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(igPageUrl), '_blank', 'width=600,height=400');
+  });
+  document.getElementById('drberg-ig-copy').addEventListener('click', function() {
+    navigator.clipboard.writeText(igPageUrl).then(function() { igToast('Link copied to clipboard'); });
+  });
+
+  var igEmbedPanel = document.getElementById('drberg-ig-embed-panel');
+  var igActionsBar = document.getElementById('drberg-ig-actions-bar');
+  document.getElementById('drberg-ig-embed-btn').addEventListener('click', function() {
+    var isOpen = igEmbedPanel.classList.toggle('open');
+    igActionsBar.classList.toggle('embed-open', isOpen);
+  });
+  document.getElementById('drberg-ig-embed-copy').addEventListener('click', function() {
+    var code = document.getElementById('drberg-ig-embed-code');
+    code.select();
+    navigator.clipboard.writeText(code.value).then(function() { igToast('Embed code copied'); });
+  });
+
+  var igToastTimer;
+  function igToast(msg) {
+    var t = document.getElementById('drberg-ig-toast');
+    t.textContent = msg;
+    t.classList.add('visible');
+    clearTimeout(igToastTimer);
+    igToastTimer = setTimeout(function() { t.classList.remove('visible'); }, 2200);
+  }
 
 })();
 </script>
